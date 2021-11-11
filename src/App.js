@@ -4,16 +4,20 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import CarExplore from "./Pages/CarExplore/CarExplore";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import Home from "./Pages/Home/Home/Home";
 import CarDetails from "./Pages/Home/Products/CarDetails/CarDetails";
+import Login from "./Pages/Login/Login/Login";
+import Register from "./Pages/Login/Register/Register";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
 import Testimonials from "./Pages/Testimonials/Testimonials";
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <Router>
         <Navigation></Navigation>
         <Switch>
@@ -32,10 +36,19 @@ function App() {
           <Route path='/cars/buying/:buyingId'>
             <CarDetails></CarDetails>
           </Route>
+          <Route path='/login'>
+            <Login></Login>
+          </Route>
+          <Route path='/register'>
+            <Register></Register>
+          </Route>
+          <Route path='/dashboard'>
+            <Dashboard></Dashboard>
+          </Route>
         </Switch>
         <Footer></Footer>
       </Router>
-    </div>
+    </AuthProvider>
   );
 }
 

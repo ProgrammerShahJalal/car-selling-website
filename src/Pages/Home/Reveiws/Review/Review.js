@@ -6,10 +6,9 @@ const Review = ({ review }) => {
 
     const reviewBg = {
         color: '#C1C1C1',
-        background: `url("https://i.ibb.co/1sCF4PY/reviewbg.jpg")`,
         backgroundPosition: 'center center',
         backgroundSize: 'cover',
-        backgroundColor: 'rgba(21, 22, 24, 0.9)',
+        backgroundColor: 'rgba(0, 0, 0, 0)',
         backgroundBlendMode: 'darken, luminosity'
     }
 
