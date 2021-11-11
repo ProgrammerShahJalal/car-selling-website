@@ -9,6 +9,7 @@ import Home from "./Pages/Home/Home/Home";
 import CarDetails from "./Pages/Home/Products/CarDetails/CarDetails";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
+import Testimonials from "./Pages/Testimonials/Testimonials";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path='/products'>
             <CarExplore></CarExplore>
+          </Route>
+          <Route path='/testimonials'>
+            <Testimonials></Testimonials>
           </Route>
           <Route path='/cars/buying/:buyingId'>
             <CarDetails></CarDetails>

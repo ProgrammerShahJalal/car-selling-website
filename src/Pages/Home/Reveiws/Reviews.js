@@ -23,7 +23,7 @@ const Reviews = (props) => {
     }
 
     return (
-        <Container style={reviewsBg} sx={{ py: 5 }}>
+        <Container style={reviewsBg} sx={{ py: 5, mt: 5 }}>
             <Box sx={{ textAlign: 'center' }}>
                 <Typography sx={{ color: 'white' }} variant="caption" display="block" gutterBottom>
                     What Our Happy Clients say about us
