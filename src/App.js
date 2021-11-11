@@ -14,6 +14,7 @@ import Register from "./Pages/Login/Register/Register";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
 import Testimonials from "./Pages/Testimonials/Testimonials";
+import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -33,9 +34,9 @@ function App() {
           <Route path='/testimonials'>
             <Testimonials></Testimonials>
           </Route>
-          <Route path='/cars/buying/:buyingId'>
+          <PrivateRoute path='/cars/buying/:buyingId'>
             <CarDetails></CarDetails>
-          </Route>
+          </PrivateRoute>
           <Route path='/login'>
             <Login></Login>
           </Route>

@@ -1,6 +1,7 @@
-import { Button, TextField, Alert } from '@mui/material';
+import { TextField, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
+import CarButton from '../../../StyleComponent/CarButton';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
@@ -40,7 +41,7 @@ const MakeAdmin = () => {
                     type="email"
                     onBlur={handleOnBlur}
                     variant="standard" />
-                <Button type="submit" variant="contained">Make Admin</Button>
+                <CarButton type="submit" variant="contained">Make Admin</CarButton>
             </form>
             {success && <Alert severity="success">Made Admin successfully!</Alert>}
         </div>
