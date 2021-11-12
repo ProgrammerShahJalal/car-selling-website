@@ -25,7 +25,7 @@ const AddReview = () => {
 
                 <input style={{ margin: '1px', padding: '15px 20px' }} placeholder="Your Title" {...register("title", { required: true })} /> <br /> <br />
 
-                <input style={{ margin: '1px', padding: '15px 20px' }} placeholder="Place a rating number" type="number" {...register("rating", { required: true, min: 0.5, max: 5 })} /> <br /><br />
+                <input style={{ margin: '1px', padding: '15px 20px' }} placeholder="Place a rating number" type="text" {...register("rating", { required: true, valueAsNumber: true })} /> <br /><br />
 
                 <input style={{ margin: '1px', padding: '15px 20px' }} placeholder="Your Photo url" {...register("img", { required: true })} /> <br /><br />
 

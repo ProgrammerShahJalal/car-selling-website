@@ -29,7 +29,10 @@ const Orders = () => {
     useEffect(() => {
         fetch('https://young-garden-14257.herokuapp.com/allOrders')
             .then(res => res.json())
-            .then(data => setOrders(data))
+            .then(data => {
+                setOrders(data);
+                console.log(data);
+            })
     }, [])
     return (
         <Container>
