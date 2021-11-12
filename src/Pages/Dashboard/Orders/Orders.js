@@ -47,17 +47,17 @@ const Orders = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {orders.map((row) => (
+                        {orders.map((order) => (
                             <TableRow
-                                key={row._id}
+                                key={order._id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.email}</TableCell>
-                                <TableCell align="right">{row.text}</TableCell>
-                                <TableCell align="right">{row.status}</TableCell>
+                                <TableCell component="th" scope="row">{order.name}</TableCell>
+                                <TableCell align="right">{order.email}</TableCell>
+                                <TableCell align="right">{order.text}</TableCell>
+                                <TableCell align="right">{order.status}</TableCell>
                                 <TableCell align="right">
-                                    <button onClick={() => handleDelete(row._id)}>Delete</button>
+                                    <button onClick={() => handleDelete(order._id)}>Delete</button>
                                 </TableCell>
                             </TableRow>
                         ))}

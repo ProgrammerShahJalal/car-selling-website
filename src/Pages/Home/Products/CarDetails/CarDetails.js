@@ -59,10 +59,9 @@ const CarDetails = () => {
                 <Grid item xs={12} md={6} sx={{ textAlign: 'center' }}>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input style={{ margin: '10px', padding: '15px 20px' }}
-                            {...register("name")}
+                            {...register("name", { required: true })}
                             placeholder="Your Name"
                             defaultValue={user.displayName}
-                            disabled
                         />
                         <br />
 
@@ -71,7 +70,6 @@ const CarDetails = () => {
                             {...register("email", { required: true })}
                             placeholder="Your Email"
                             defaultValue={user.email}
-                            disabled
                         />
                         <br />
                         <input
@@ -79,7 +77,6 @@ const CarDetails = () => {
                             {...register("text", { required: true })}
                             placeholder="Order Name"
                             defaultValue={carDetails.name}
-                            disabled
                         />
                         <br />
                         <input
@@ -102,9 +99,8 @@ const CarDetails = () => {
                         <br />
                         <input
                             style={{ margin: '10px', padding: '15px 20px' }}
-                            {...register("status", { required: true, disabled: true })}
+                            {...register("status", { required: true })}
                             defaultValue={carDetails.status}
-                            disabled
                         />
                         <br />
                         {errors.exampleRequired && <span>This field is required</span>}
