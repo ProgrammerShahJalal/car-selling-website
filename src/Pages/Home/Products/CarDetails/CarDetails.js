@@ -16,7 +16,7 @@ const CarDetails = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/addOrders', data)
+        axios.post('https://young-garden-14257.herokuapp.com/addOrders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Successfully placed your orders!');
@@ -26,7 +26,7 @@ const CarDetails = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/buying/${buyingId}`)
+        fetch(`https://young-garden-14257.herokuapp.com/cars/buying/${buyingId}`)
             .then(res => res.json())
             .then(data => setCarDetails(data))
     }, [buyingId])

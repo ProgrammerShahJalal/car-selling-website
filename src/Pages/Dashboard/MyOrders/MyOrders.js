@@ -17,7 +17,7 @@ const MyOrders = () => {
     console.log(user.email)
     useEffect(() => {
         let isUnMount = false;
-        const url = `http://localhost:5000/myOrders?email=${user.email}`;
+        const url = `https://young-garden-14257.herokuapp.com/myOrders?email=${user.email}`;
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
@@ -38,7 +38,7 @@ const MyOrders = () => {
     const handleDelete = id => {
         const result = window.confirm('Are you sure to delete?');
         if (result) {
-            const url = `http://localhost:5000/allOrders/${id}`
+            const url = `https://young-garden-14257.herokuapp.com/allOrders/${id}`
             console.log(url);
             fetch(url, {
                 method: 'DELETE'

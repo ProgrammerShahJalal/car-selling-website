@@ -8,7 +8,7 @@ const Orders = () => {
     const handleDelete = id => {
         const result = window.confirm('Are you sure to delete?');
         if (result) {
-            const url = `http://localhost:5000/allOrders/${id}`
+            const url = `https://young-garden-14257.herokuapp.com/allOrders/${id}`
             console.log(url);
             fetch(url, {
                 method: 'DELETE'
@@ -27,7 +27,7 @@ const Orders = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://young-garden-14257.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])

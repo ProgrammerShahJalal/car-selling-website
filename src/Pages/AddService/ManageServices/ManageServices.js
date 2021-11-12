@@ -8,7 +8,7 @@ const ManageServices = () => {
     const handleDelete = id => {
         const result = window.confirm('Are you sure to delete?');
         if (result) {
-            const url = `http://localhost:5000/cars/${id}`
+            const url = `https://young-garden-14257.herokuapp.com/cars/${id}`
             console.log(url);
             fetch(url, {
                 method: 'DELETE'
@@ -27,7 +27,7 @@ const ManageServices = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('https://young-garden-14257.herokuapp.com/cars')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
