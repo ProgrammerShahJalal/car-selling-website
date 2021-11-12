@@ -26,6 +26,9 @@ import AdminRoute from '../../Login/Login/AdminRoute/AdminRoute';
 import useAuth from '../../../hooks/useAuth';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import Pay from '../../Pay/Pay';
+import AddReview from '../../Home/Reveiws/AddReview/AddReview';
+import ReviewSlider from '../../Home/Reveiws/ReviewSlider/ReviewSlider';
 
 
 const drawerWidth = 200;
@@ -34,7 +37,7 @@ function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const { admin } = useAuth();
+    const { admin, logout } = useAuth();
 
     let { path, url } = useRouteMatch();
 
@@ -47,15 +50,29 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
-                <Link to='/appointment' style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>Appointment</Button></Link>
-
                 <Link to={`${url}`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-tachometer-alt"></i>Dashboard</Button></Link>
 
                 {admin && <Box>
                     <Link to={`${url}/makeAdmin`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-shield"></i>Make Admin</Button></Link>
-
-                    <Link to={`${url}/addDoctor`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>Add Doctor</Button></Link>
                 </Box>}
+
+                <ListItem>
+                    <Link to={`${url}/myOrders`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>My Orders</Button></Link>
+                </ListItem>
+                <ListItem>
+                    <Link to={`${url}/pay`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>Pay</Button></Link>
+                </ListItem>
+
+                <ListItem>
+                    <Link to={`${url}/reviews`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>All Reviews</Button></Link>
+                </ListItem>
+                <ListItem>
+                    <Link to={`${url}/addReview`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>Add Review</Button></Link>
+                </ListItem>
+
+                <ListItem>
+                    <Button onClick={logout} style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>Logout</Button>
+                </ListItem>
 
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
@@ -143,8 +160,14 @@ function Dashboard(props) {
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
-                    <AdminRoute path={`${path}/addReviews`}>
-                        Add Reviews
+                    <AdminRoute path={`${path}/addReview`}>
+                        <AddReview></AddReview>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/reviews`}>
+                        <ReviewSlider></ReviewSlider>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/pay`}>
+                        <Pay></Pay>
                     </AdminRoute>
                 </Switch>
             </Box>

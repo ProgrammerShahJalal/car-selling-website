@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Container, Typography } from '@mui/material'
 import { Box } from '@mui/system';
-import AddReview from './AddReview/AddReview';
-import Review from './Review/Review';
+import Review from '../Review/Review';
 
 const Reviews = (props) => {
     const [reviews, setReviews] = useState([]);
@@ -40,7 +39,6 @@ const Reviews = (props) => {
                     </Carousel>
                 </Box>
             </Container>
-            <AddReview></AddReview>
         </Box>
 
     )
