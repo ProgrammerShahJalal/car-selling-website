@@ -4,6 +4,14 @@ import React, { useEffect, useState } from 'react';
 const Orders = () => {
     const [orders, setOrders] = useState([]);
 
+    useEffect(() => {
+        fetch('https://young-garden-14257.herokuapp.com/allOrders')
+            .then(res => res.json())
+            .then(data => {
+                setOrders(data);
+                console.log(data);
+            })
+    }, [])
 
     const handleDelete = id => {
         const result = window.confirm('Are you sure to delete?');
@@ -17,23 +25,13 @@ const Orders = () => {
                 .then(data => {
                     if (data.deletedCount) {
                         alert('Deleted Successfully!')
-                        const remaining = orders.filter(pd => pd._id !== id);
+                        const remaining = orders.filter(order => order._id !== id);
                         setOrders(remaining);
                     }
                 })
         }
 
     }
-
-
-    useEffect(() => {
-        fetch('https://young-garden-14257.herokuapp.com/allOrders')
-            .then(res => res.json())
-            .then(data => {
-                setOrders(data);
-                console.log(data);
-            })
-    }, [])
     return (
         <Container>
             <h2>All Orders: {orders.length}</h2>
@@ -48,7 +46,7 @@ const Orders = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {orders.map((row, pd) => (
+                        {orders.map((row, order) => (
                             <TableRow
                                 key={row._id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -57,7 +55,7 @@ const Orders = () => {
                                 <TableCell align="right">{row.email}</TableCell>
                                 <TableCell align="right">{row.text}</TableCell>
                                 <TableCell align="right">
-                                    <button onClick={() => handleDelete(pd._id)} >Delete</button>
+                                    <button onClick={() => handleDelete(order._id)} >Delete</button>
                                 </TableCell>
                             </TableRow>
                         ))}

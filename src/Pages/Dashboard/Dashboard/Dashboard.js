@@ -158,24 +158,24 @@ function Dashboard(props) {
                     <AdminRoute path={`${path}/addService`}>
                         <AddService></AddService>
                     </AdminRoute>
-                    <AdminRoute path={`${path}/addReview`}>
+                    <Route path={`${path}/addReview`}>
                         <AddReview></AddReview>
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/myOrders`}>
+                    </Route>
+                    <Route path={`${path}/myOrders`}>
                         <MyOrders></MyOrders>
-                    </AdminRoute>
+                    </Route>
                     <AdminRoute path={`${path}/orders`}>
                         <Orders></Orders>
                     </AdminRoute>
                     <AdminRoute path={`${path}/services`}>
                         <ManageServices></ManageServices>
                     </AdminRoute>
-                    <AdminRoute path={`${path}/reviews`}>
+                    <Route path={`${path}/reviews`}>
                         <ReviewSlider></ReviewSlider>
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/pay`}>
+                    </Route>
+                    <Route path={`${path}/pay`}>
                         <Pay></Pay>
-                    </AdminRoute>
+                    </Route>
                 </Switch>
             </Box>
         </Box>
