@@ -46,7 +46,7 @@ const Orders = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {orders.map((row, order) => (
+                        {orders.map((row) => (
                             <TableRow
                                 key={row._id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -55,7 +55,7 @@ const Orders = () => {
                                 <TableCell align="right">{row.email}</TableCell>
                                 <TableCell align="right">{row.text}</TableCell>
                                 <TableCell align="right">
-                                    <button onClick={() => handleDelete(order._id)} >Delete</button>
+                                    <button onClick={() => handleDelete(row._id)}>Delete</button>
                                 </TableCell>
                             </TableRow>
                         ))}
