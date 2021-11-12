@@ -62,7 +62,7 @@ const CarDetails = () => {
                             {...register("name")}
                             placeholder="Your Name"
                             defaultValue={user.displayName}
-                            className="p-2 m-2"
+                            disabled
                         />
                         <br />
 
@@ -71,7 +71,7 @@ const CarDetails = () => {
                             {...register("email", { required: true })}
                             placeholder="Your Email"
                             defaultValue={user.email}
-                            className="p-2 m-2"
+                            disabled
                         />
                         <br />
                         <input
@@ -79,6 +79,7 @@ const CarDetails = () => {
                             {...register("text", { required: true })}
                             placeholder="Order Name"
                             defaultValue={carDetails.name}
+                            disabled
                         />
                         <br />
                         <input
@@ -97,6 +98,13 @@ const CarDetails = () => {
                             style={{ margin: '10px', padding: '15px 20px' }}
                             {...register("description", { required: true })}
                             placeholder="Description"
+                        />
+                        <br />
+                        <input
+                            style={{ margin: '10px', padding: '15px 20px' }}
+                            {...register("status", { required: true, disabled: true })}
+                            defaultValue={carDetails.status}
+                            disabled
                         />
                         <br />
                         {errors.exampleRequired && <span>This field is required</span>}

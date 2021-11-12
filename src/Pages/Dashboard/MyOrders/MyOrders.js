@@ -65,6 +65,7 @@ const MyOrders = () => {
                             <TableCell>Name</TableCell>
                             <TableCell align="right">Email</TableCell>
                             <TableCell align="right">Service</TableCell>
+                            <TableCell align="right">Status</TableCell>
                             <TableCell align="right">Action</TableCell>
                         </TableRow>
                     </TableHead>
@@ -77,6 +78,7 @@ const MyOrders = () => {
                                 <TableCell component="th" scope="row">{row.name}</TableCell>
                                 <TableCell align="right">{row.email}</TableCell>
                                 <TableCell align="right">{row.text}</TableCell>
+                                <TableCell align="right">{row.status}</TableCell>
                                 <TableCell align="right">
                                     <button onClick={() => handleDelete(row._id)} >Delete</button>
                                 </TableCell>
