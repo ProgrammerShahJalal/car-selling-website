@@ -15,7 +15,6 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
-import Pay from "./Pages/Pay/Pay";
 
 function App() {
   return (
@@ -46,9 +45,6 @@ function App() {
           </Route>
           <Route path='/dashboard'>
             <Dashboard></Dashboard>
-          </Route>
-          <Route path='/pay'>
-            <Pay></Pay>
           </Route>
         </Switch>
         <Footer></Footer>

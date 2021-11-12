@@ -83,13 +83,13 @@ const CarDetails = () => {
                         <br />
                         <input
                             style={{ margin: '10px', padding: '15px 20px' }}
-                            {...register("booking", { required: true })}
+                            {...register("phone", { required: true })}
                             placeholder="Your Phone"
                         />
                         <br />
                         <input
                             style={{ margin: '10px', padding: '15px 20px' }}
-                            {...register("booking", { required: true })}
+                            {...register("address", { required: true })}
                             placeholder="Your Address"
                         />
                         <br />

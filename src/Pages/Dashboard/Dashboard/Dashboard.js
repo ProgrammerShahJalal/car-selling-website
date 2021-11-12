@@ -6,12 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -29,6 +24,10 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Pay from '../../Pay/Pay';
 import AddReview from '../../Home/Reveiws/AddReview/AddReview';
 import ReviewSlider from '../../Home/Reveiws/ReviewSlider/ReviewSlider';
+import MyOrders from '../MyOrders/MyOrders';
+import Orders from '../Orders/Orders';
+import AddService from '../../AddService/AddService';
+import ManageServices from '../../AddService/ManageServices/ManageServices';
 
 
 const drawerWidth = 200;
@@ -54,34 +53,30 @@ function Dashboard(props) {
 
                 {admin && <Box>
                     <Link to={`${url}/makeAdmin`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-shield"></i>Make Admin</Button></Link>
+
+                    <Link to={`${url}/addService`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-shield"></i>Add Service</Button></Link>
+
+                    <Link to={`${url}/orders`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>Manage All Orders</Button></Link>
+
+                    <Link to={`${url}/services`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>Manage Services</Button></Link>
                 </Box>}
 
-                <ListItem>
-                    <Link to={`${url}/myOrders`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>My Orders</Button></Link>
-                </ListItem>
-                <ListItem>
-                    <Link to={`${url}/pay`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>Pay</Button></Link>
-                </ListItem>
+                <Link to={`${url}/myOrders`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>My Orders</Button></Link>
 
-                <ListItem>
-                    <Link to={`${url}/reviews`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>All Reviews</Button></Link>
-                </ListItem>
-                <ListItem>
-                    <Link to={`${url}/addReview`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>Add Review</Button></Link>
-                </ListItem>
 
-                <ListItem>
-                    <Button onClick={logout} style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>Logout</Button>
-                </ListItem>
+                <Link to={`${url}/pay`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>Payment</Button></Link>
 
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+
+
+                <Link to={`${url}/reviews`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>All Reviews</Button></Link>
+
+
+                <Link to={`${url}/addReview`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>Add Review</Button></Link>
+
+
+
+                <Button onClick={logout} style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>Logout</Button>
+
             </List>
         </div>
     );
@@ -160,8 +155,20 @@ function Dashboard(props) {
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
+                    <AdminRoute path={`${path}/addService`}>
+                        <AddService></AddService>
+                    </AdminRoute>
                     <AdminRoute path={`${path}/addReview`}>
                         <AddReview></AddReview>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/myOrders`}>
+                        <MyOrders></MyOrders>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/orders`}>
+                        <Orders></Orders>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/services`}>
+                        <ManageServices></ManageServices>
                     </AdminRoute>
                     <AdminRoute path={`${path}/reviews`}>
                         <ReviewSlider></ReviewSlider>
