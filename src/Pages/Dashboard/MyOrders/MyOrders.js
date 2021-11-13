@@ -7,7 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import useAuth from '../../../hooks/useAuth';
-import { Container } from '@mui/material';
+import { Button, Container, Tooltip } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const MyOrders = () => {
     const { user, token } = useAuth();
@@ -79,10 +80,14 @@ const MyOrders = () => {
                                 <TableCell align="right">{myOrder.email}</TableCell>
                                 <TableCell align="right">{myOrder.text}</TableCell>
                                 <TableCell align="right">
-                                    <button>{myOrder.status || 'Shipped'}</button>
+                                    <Button variant="contained">{myOrder.status || 'Shipped'}</Button>
                                 </TableCell>
                                 <TableCell align="right">
-                                    <button onClick={() => handleDelete(myOrder._id)} >Delete</button>
+                                    <Tooltip title="Delete">
+                                        <Button color="secondary" onClick={() => handleDelete(myOrder._id)} variant="contained">
+                                            Delete <DeleteIcon />
+                                        </Button>
+                                    </Tooltip>
                                 </TableCell>
                             </TableRow>
                         ))}

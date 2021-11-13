@@ -1,6 +1,7 @@
-import { Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Button, Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import UpdateOrder from '../Dashboard/UpdateOrder/UpdateOrder';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
@@ -58,10 +59,14 @@ const Orders = () => {
                                 <TableCell align="right">{order.email}</TableCell>
                                 <TableCell align="right">{order.text}</TableCell>
                                 <TableCell align="right">
-                                    <button onClick={() => handleShipped(order._id)}>{order.status || 'Shipped'}</button>
+                                    <Button variant="contained" onClick={() => handleShipped(order._id)}>{order.status || 'Shipped'}</Button>
                                 </TableCell>
                                 <TableCell align="right">
-                                    <button onClick={() => handleDelete(order._id)}>Delete</button>
+                                    <Tooltip title="Delete">
+                                        <Button color="secondary" onClick={() => handleDelete(order._id)} variant="contained">
+                                            Delete <DeleteIcon />
+                                        </Button>
+                                    </Tooltip>
                                 </TableCell>
                             </TableRow>
                         ))}

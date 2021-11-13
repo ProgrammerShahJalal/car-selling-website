@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { useHistory } from 'react-router';
 import CarButton from '../../../../StyleComponent/CarButton';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Car = ({ car }) => {
     const { _id, name, img, price, description } = car;
@@ -28,7 +29,7 @@ const Car = ({ car }) => {
                     <Typography style={{ textAlign: 'justify', padding: '5px 15px' }} variant="body1" display="block" gutterBottom>
                         {description}
                     </Typography>
-                    <CarButton onClick={() => handleOrder(_id)} variant="contained">Buy Car</CarButton>
+                    <CarButton onClick={() => handleOrder(_id)} variant="contained">Buy Car <ShoppingCartOutlinedIcon sx={{ ml: '10px' }} /></CarButton>
                 </Paper>
             </Grid>
         </>
