@@ -28,6 +28,16 @@ import MyOrders from '../MyOrders/MyOrders';
 import Orders from '../Orders/Orders';
 import AddService from '../../AddService/AddService';
 import ManageServices from '../../AddService/ManageServices/ManageServices';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import { AddBusiness } from '@mui/icons-material';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import LogoutIcon from '@mui/icons-material/Logout';
+import StarsIcon from '@mui/icons-material/Stars';
+import ReviewsIcon from '@mui/icons-material/Reviews';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import SellIcon from '@mui/icons-material/Sell';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 
 
 const drawerWidth = 200;
@@ -49,33 +59,33 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
-                <Link to={`${url}`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-tachometer-alt"></i>Dashboard</Button></Link>
+                <Link to={`${url}`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><DashboardIcon sx={{ mr: '10px', color: 'blue' }} /> Dashboard</Button></Link>
 
                 {admin && <Box>
-                    <Link to={`${url}/makeAdmin`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-shield"></i>Make Admin</Button></Link>
+                    <Link to={`${url}/makeAdmin`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><VerifiedUserIcon sx={{ mr: '10px', color: 'blue' }} /> Make Admin</Button></Link>
 
-                    <Link to={`${url}/addService`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-shield"></i>Add Service</Button></Link>
+                    <Link to={`${url}/addService`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><AddBusiness sx={{ mr: '10px', color: 'blue' }} />Add Service</Button></Link>
 
-                    <Link to={`${url}/orders`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>Manage Orders</Button></Link>
+                    <Link to={`${url}/orders`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><SellIcon sx={{ mr: '10px', color: 'blue' }} />Manage Orders</Button></Link>
 
-                    <Link to={`${url}/services`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>Manage Services</Button></Link>
+                    <Link to={`${url}/services`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><BusinessCenterIcon sx={{ mr: '10px', color: 'blue' }} />Manage Services</Button></Link>
                 </Box>}
 
-                <Link to={`${url}/myOrders`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>My Orders</Button></Link>
+                <Link to={`${url}/myOrders`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><ShoppingCartIcon sx={{ mr: '10px', color: 'blue' }} />My Orders</Button></Link>
 
 
-                <Link to={`${url}/pay`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fab fa-servicestack"> </i>Payment</Button></Link>
-
-
-
-                <Link to={`${url}/reviews`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>All Reviews</Button></Link>
-
-
-                <Link to={`${url}/addReview`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>Add Review</Button></Link>
+                <Link to={`${url}/pay`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><AccountBalanceWalletIcon sx={{ mr: '10px', color: 'blue' }} />Payment</Button></Link>
 
 
 
-                <Button onClick={logout} style={{ color: 'black' }} variant="text"><i style={{ marginRight: '1rem', color: '#FB6454', fontSize: '20px' }} className="fas fa-user-md"></i>Logout</Button>
+                <Link to={`${url}/reviews`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><ReviewsIcon sx={{ mr: '10px', color: 'blue' }} />All Reviews</Button></Link>
+
+
+                <Link to={`${url}/addReview`} style={{ textDecoration: 'none' }}><Button style={{ color: 'black' }} variant="text"><StarsIcon sx={{ mr: '10px', color: 'blue' }} />Add Review</Button></Link>
+
+
+
+                <Button onClick={logout} style={{ color: 'black' }} variant="text"><LogoutIcon sx={{ mr: '10px', color: 'blue' }} />Logout</Button>
 
             </List>
         </div>
