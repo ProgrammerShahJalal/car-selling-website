@@ -1,5 +1,6 @@
-import { Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Button, Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const ManageServices = () => {
     const [services, setServices] = useState([]);
@@ -54,7 +55,11 @@ const ManageServices = () => {
                                 <TableCell align="right">${row.price}</TableCell>
                                 <TableCell align="right"><img style={{ width: '100px' }} src={row.img} alt="" /></TableCell>
                                 <TableCell align="right">
-                                    <button onClick={() => handleDelete(pd._id)} >Delete</button>
+                                    <Tooltip title="Delete">
+                                        <Button color="secondary" onClick={() => handleDelete(pd._id)} variant="contained">
+                                            Delete <DeleteIcon />
+                                        </Button>
+                                    </Tooltip>
                                 </TableCell>
                             </TableRow>
                         ))}
