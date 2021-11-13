@@ -31,9 +31,12 @@ const Navigation = () => {
             [theme.breakpoints.down('sm')]: {
                 textAlign: 'right !important'
             }
+        },
+        mobileNavItem: {
+            textDecoration: 'none !important'
         }
     });
-    const { navIcon, navItemContainer, navLogo } = useStyle();
+    const { navIcon, navItemContainer, navLogo, mobileNavItem } = useStyle();
 
     const [state, setState] = React.useState(false);
 
@@ -45,24 +48,24 @@ const Navigation = () => {
             <List>
                 <ListItem button>
                     <ListItemText>
-                        <Link to='/'>Home</Link>
+                        <Link className={mobileNavItem} to='/'>Home</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem button>
                     <ListItemText>
-                        <Link to='/products'>Explore Car</Link>
+                        <Link className={mobileNavItem} to='/products'>Explore Car</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem button>
                     <ListItemText>
-                        <Link to='/testimonials'>Reviews</Link>
+                        <Link className={mobileNavItem} to='/testimonials'>Reviews</Link>
                     </ListItemText>
                 </ListItem>
                 {user.email ?
                     <Box>
                         <ListItem button>
                             <ListItemText>
-                                <Link to='/dashboard'>Dashboard</Link>
+                                <Link className={mobileNavItem} to='/dashboard'>Dashboard</Link>
                             </ListItemText>
                         </ListItem>
                         <ListItem button>
@@ -79,7 +82,7 @@ const Navigation = () => {
                     :
                     <ListItem button>
                         <ListItemText>
-                            <Link to='/login'>Login</Link>
+                            <Link className={mobileNavItem} to='/login'>Login</Link>
                         </ListItemText>
                     </ListItem>
                 }
