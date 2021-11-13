@@ -78,7 +78,9 @@ const MyOrders = () => {
                                 <TableCell component="th" scope="row">{myOrder.name}</TableCell>
                                 <TableCell align="right">{myOrder.email}</TableCell>
                                 <TableCell align="right">{myOrder.text}</TableCell>
-                                <TableCell align="right">{myOrder.status}</TableCell>
+                                <TableCell align="right">
+                                    <button>{myOrder.status || 'Shipped'}</button>
+                                </TableCell>
                                 <TableCell align="right">
                                     <button onClick={() => handleDelete(myOrder._id)} >Delete</button>
                                 </TableCell>

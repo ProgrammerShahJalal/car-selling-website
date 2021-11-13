@@ -1,8 +1,10 @@
 import { Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import UpdateOrder from '../Dashboard/UpdateOrder/UpdateOrder';
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
+    const { handleShipped } = UpdateOrder();
 
     useEffect(() => {
         fetch('https://young-garden-14257.herokuapp.com/allOrders')
@@ -55,7 +57,9 @@ const Orders = () => {
                                 <TableCell component="th" scope="row">{order.name}</TableCell>
                                 <TableCell align="right">{order.email}</TableCell>
                                 <TableCell align="right">{order.text}</TableCell>
-                                <TableCell align="right">{order.status}</TableCell>
+                                <TableCell align="right">
+                                    <button onClick={() => handleShipped(order._id)}>{order.status || 'Shipped'}</button>
+                                </TableCell>
                                 <TableCell align="right">
                                     <button onClick={() => handleDelete(order._id)}>Delete</button>
                                 </TableCell>
