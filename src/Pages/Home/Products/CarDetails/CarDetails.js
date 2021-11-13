@@ -100,7 +100,7 @@ const CarDetails = () => {
                         <input
                             style={{ margin: '10px', padding: '15px 20px' }}
                             {...register("status", { required: true })}
-                            defaultValue={carDetails.status}
+                            defaultValue={carDetails.status} readOnly
                         />
                         <br />
                         {errors.exampleRequired && <span>This field is required</span>}
