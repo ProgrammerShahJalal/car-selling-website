@@ -15,6 +15,7 @@ import { Divider, Drawer, List, ListItem, ListItemText, useTheme } from '@mui/ma
 const Navigation = () => {
     const { user, logout } = useAuth();
 
+    // responsive navbar
     const theme = useTheme();
     const useStyle = makeStyles({
         navIcon: {
