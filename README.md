@@ -9,6 +9,7 @@ A niche website is a website that caters to a small segment of a large market by
 <li>HTML</li>
 <li>CSS</li>
 <li>JavaScript</li>
+<li>Material UI</li>
 <li>Node Js</li>
 <li>Node Express</li>
 <li>React Router</li>
