@@ -1,3 +1,4 @@
+import './App.css';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -18,38 +19,41 @@ import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Navigation></Navigation>
-        <Switch>
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
-          <Route path='/products'>
-            <CarExplore></CarExplore>
-          </Route>
-          <Route path='/testimonials'>
-            <Testimonials></Testimonials>
-          </Route>
-          <PrivateRoute path='/cars/buying/:buyingId'>
-            <CarDetails></CarDetails>
-          </PrivateRoute>
-          <Route path='/login'>
-            <Login></Login>
-          </Route>
-          <Route path='/register'>
-            <Register></Register>
-          </Route>
-          <PrivateRoute path='/dashboard'>
-            <Dashboard></Dashboard>
-          </PrivateRoute>
-        </Switch>
-        <Footer></Footer>
-      </Router>
-    </AuthProvider>
+    <div className="App">
+      <AuthProvider>
+        <Router>
+          <Navigation></Navigation>
+          <Switch>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route path='/products'>
+              <CarExplore></CarExplore>
+            </Route>
+            <Route path='/testimonials'>
+              <Testimonials></Testimonials>
+            </Route>
+            <PrivateRoute path='/cars/buying/:buyingId'>
+              <CarDetails></CarDetails>
+            </PrivateRoute>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            <Route path='/register'>
+              <Register></Register>
+            </Route>
+            <PrivateRoute path='/dashboard'>
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
+    </div>
+
   );
 }
 
