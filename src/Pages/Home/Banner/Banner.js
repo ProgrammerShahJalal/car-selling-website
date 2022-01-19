@@ -14,7 +14,7 @@ const Banner = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6} sx={{ textAlign: 'left' }}>
                         <Box>
-                            <Typography variant='h4' sx={{ fontWeight: 500, my: 2 }}>
+                            <Typography variant='h3' sx={{ fontWeight: 500, my: 2 }}>
                                 Your Dream Car <br /> is Here
                             </Typography>
                             <Typography sx={{ fontWeight: 'light', mb: 2, fontSize: 15, textAlign: 'justify', width: '75%' }} variant="h6" component="div">

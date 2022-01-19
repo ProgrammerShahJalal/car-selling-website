@@ -26,15 +26,15 @@ const Products = () => {
                 </Typography>
                 <Grid container spacing={2}>
                     {(isLoading ? Array.from(new Array(6)) : url).map((item, index) => (
-                        <Box key={index} sx={{ width: 350, marginRight: 0.5, my: 5 }}>
+                        <Box key={index} sx={{ width: 380, marginRight: 0.5, my: 5 }}>
                             {item ? (
                                 <img
-                                    style={{ width: 340, height: 220 }}
+                                    style={{ width: 380, height: 220 }}
                                     alt={item.title}
                                     src={item.src}
                                 />
                             ) : (
-                                <Skeleton variant="rectangular" width={340} height={220} />
+                                <Skeleton variant="rectangular" width={380} height={220} />
                             )}
 
                             {item ? (
