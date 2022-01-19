@@ -4,6 +4,7 @@ import { Container, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Link } from 'react-router-dom';
 import MuiButton from '../../../StyleComponent/MuiButton';
+import Typical from 'react-typical';
 
 
 const Banner = () => {
@@ -15,8 +16,13 @@ const Banner = () => {
                     <Grid item xs={12} md={6} sx={{ textAlign: 'left' }}>
                         <Box>
                             <Typography variant='h3' sx={{ fontWeight: 500, my: 2 }}>
-                                Your Dream Car <br /> is Here
+                                <Typical
+                                    steps={['Your Dream Car is Here!', 2000, 'Choose Your Car!', 2000, 'Explore Best Car!', 2000]}
+                                    loop={Infinity}
+                                    wrapper="p"
+                                />
                             </Typography>
+
                             <Typography sx={{ fontWeight: 'light', mb: 2, fontSize: 15, textAlign: 'justify', width: '75%' }} variant="h6" component="div">
                                 A car is a wheeled motor vehicle used for transportation. Most definitions of cars say that they run primarily on roads, seat one-to-eight people, have four wheels and mainly transport people rather than goods.
                             </Typography>

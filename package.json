@@ -19,6 +19,7 @@
     "react-material-ui-carousel": "^3.0.4",
     "react-router-dom": "5",
     "react-scripts": "4.0.3",
+    "react-typical": "^0.1.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
