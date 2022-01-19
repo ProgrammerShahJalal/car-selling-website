@@ -22,7 +22,7 @@ const Products = () => {
         return (
             <Container style={{ textAlign: 'center' }} sx={{ my: 5 }}>
                 <Typography sx={{ fontWeight: 600 }} variant="h4" gutterBottom component="div">
-                    Explore Your Car
+                    Our Popular Cars
                 </Typography>
                 <Grid container spacing={2}>
                     {(isLoading ? Array.from(new Array(6)) : url).map((item, index) => (
