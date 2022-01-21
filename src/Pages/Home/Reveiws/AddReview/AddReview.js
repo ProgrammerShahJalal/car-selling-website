@@ -30,7 +30,7 @@ const AddReview = () => {
                 <input style={{ margin: '1px', padding: '15px 20px' }} placeholder="Your Photo url" {...register("img", { required: true })} /> <br /><br />
 
                 <textarea style={{ margin: '1px', padding: '15px 20px' }} placeholder='Review Description' {...register("description", { required: true })} /> <br /><br />
-                <input style={{ padding: '5px 15px' }} type="submit" />
+                <input style={{ padding: '10px 35px', borderRadius: '25px', border: 'none', outline: 'none' }} type="submit" />
             </form>
         </Container>
     );
