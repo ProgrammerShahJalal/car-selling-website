@@ -31,7 +31,7 @@ const useFirebase = () => {
                 history.replace('/');
             })
             .catch((error) => {
-                setError(error.message);
+                setError(error.code.split('auth/',)[1])
             })
             .finally(() => {
                 setIsLoading(false);
@@ -48,7 +48,7 @@ const useFirebase = () => {
                 setError('');
             })
             .catch((error) => {
-                setError(error.message);
+                setError(error.code.split('auth/',)[1])
             })
             .finally(() => setIsLoading(false));
     }
@@ -94,7 +94,7 @@ const useFirebase = () => {
                 setError('');
             })
             .catch((error) => {
-                setError(error.message);
+                setError(error.code.split('auth/',)[1])
             })
             .finally(() => setIsLoading(false));
     }

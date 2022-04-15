@@ -80,7 +80,7 @@ const Register = () => {
                         User created — <strong>successfully!</strong>
                     </Alert>}
                     {error && <Alert severity="error">
-                        <AlertTitle>Error</AlertTitle>
+                        <AlertTitle>Something went wrong.</AlertTitle>
                         {error}
                     </Alert>}
                 </Grid>
