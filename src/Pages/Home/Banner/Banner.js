@@ -15,11 +15,12 @@ const Banner = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6} sx={{ textAlign: 'left' }}>
                         <Box>
-                            <Typography variant='h3' sx={{ fontWeight: 500, my: 2 }}>
+                            <Typography variant='h3' sx={{ fontWeight: 700, }}>
+                                Car Selling
                                 <Typical
-                                    steps={['Your Dream Car is Here!', 2000, 'Choose Your Car!', 2000, 'Explore Best Car!', 2000]}
+                                    steps={['Success!', 2000, 'Service!', 2000, 'Business!', 2000]}
                                     loop={Infinity}
-                                    wrapper="p"
+                                    wrapper="div"
                                 />
                             </Typography>
 
