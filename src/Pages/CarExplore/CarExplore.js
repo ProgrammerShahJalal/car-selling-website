@@ -4,7 +4,7 @@ import Car from '../Home/Products/Car/Car';
 
 const CarExplore = () => {
 
-    const url = 'https://young-garden-14257.herokuapp.com/cars';
+    const url = 'https://car-selling-server.onrender.com/cars';
 
     const [cars, setCars] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +12,7 @@ const CarExplore = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://young-garden-14257.herokuapp.com/cars')
+        fetch('https://car-selling-server.onrender.com/cars')
             .then(res => res.json())
             .then(data => {
                 setIsLoading(false);

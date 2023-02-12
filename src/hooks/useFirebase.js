@@ -73,7 +73,7 @@ const useFirebase = () => {
     useEffect(() => {
         let isUnMount = false;
         setIsLoading(true);
-        fetch(`https://young-garden-14257.herokuapp.com/users/${user.email}`)
+        fetch(`https://car-selling-server.onrender.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 if (!isUnMount) {
@@ -101,7 +101,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://young-garden-14257.herokuapp.com/users', {
+        fetch('https://car-selling-server.onrender.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

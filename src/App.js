@@ -1,11 +1,9 @@
-import './App.css';
 import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import CarExplore from "./Pages/CarExplore/CarExplore";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import Home from "./Pages/Home/Home/Home";
@@ -16,6 +14,7 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
 import Testimonials from "./Pages/Testimonials/Testimonials";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
 
 function App() {
   return (

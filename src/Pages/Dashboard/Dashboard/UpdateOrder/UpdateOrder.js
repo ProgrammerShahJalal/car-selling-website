@@ -4,7 +4,7 @@ const UpdateOrder = () => {
     const [order, setOrder] = useState({});
 
     const handleShipped = id => {
-        const url = `https://young-garden-14257.herokuapp.com/allOrders/${id}`;
+        const url = `https://car-selling-server.onrender.com/allOrders/${id}`;
         console.log(url);
         fetch(url, {
             method: 'PUT',

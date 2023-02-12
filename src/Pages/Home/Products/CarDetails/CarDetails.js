@@ -16,7 +16,7 @@ const CarDetails = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('https://young-garden-14257.herokuapp.com/addOrders', data)
+        axios.post('https://car-selling-server.onrender.com/addOrders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Successfully placed your orders!');
@@ -26,7 +26,7 @@ const CarDetails = () => {
     }
 
     useEffect(() => {
-        fetch(`https://young-garden-14257.herokuapp.com/cars/buying/${buyingId}`)
+        fetch(`https://car-selling-server.onrender.com/cars/buying/${buyingId}`)
             .then(res => res.json())
             .then(data => setCarDetails(data))
     }, [buyingId])

@@ -9,7 +9,7 @@ const ManageServices = () => {
     const handleDelete = id => {
         const result = window.confirm('Are you sure to delete?');
         if (result) {
-            const url = `https://young-garden-14257.herokuapp.com/cars/${id}`
+            const url = `https://car-selling-server.onrender.com/cars/${id}`
             console.log(url);
             fetch(url, {
                 method: 'DELETE'
@@ -28,7 +28,7 @@ const ManageServices = () => {
 
 
     useEffect(() => {
-        fetch('https://young-garden-14257.herokuapp.com/cars')
+        fetch('https://car-selling-server.onrender.com/cars')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

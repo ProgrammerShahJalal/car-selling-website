@@ -8,7 +8,7 @@ const Orders = () => {
     const { handleShipped } = UpdateOrder();
 
     useEffect(() => {
-        fetch('https://young-garden-14257.herokuapp.com/allOrders')
+        fetch('https://car-selling-server.onrender.com/allOrders')
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
@@ -19,7 +19,7 @@ const Orders = () => {
     const handleDelete = id => {
         const result = window.confirm('Are you sure to delete?');
         if (result) {
-            const url = `https://young-garden-14257.herokuapp.com/allOrders/${id}`
+            const url = `https://car-selling-server.onrender.com/allOrders/${id}`
             console.log(url);
             fetch(url, {
                 method: 'DELETE'

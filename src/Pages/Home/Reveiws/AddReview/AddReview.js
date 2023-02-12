@@ -8,7 +8,7 @@ const AddReview = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://young-garden-14257.herokuapp.com/reviews', data)
+        axios.post('https://car-selling-server.onrender.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added a New Review Successfully!');
