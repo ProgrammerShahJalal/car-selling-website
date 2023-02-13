@@ -1,0 +1,30 @@
+[debug] [2023-02-13T08:08:48.860Z] ----------------------------------------------------------------------
+[debug] [2023-02-13T08:08:48.864Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-02-13T08:08:48.865Z] CLI Version:   11.21.0
+[debug] [2023-02-13T08:08:48.865Z] Platform:      win32
+[debug] [2023-02-13T08:08:48.865Z] Node Version:  v18.14.0
+[debug] [2023-02-13T08:08:48.878Z] Time:          Mon Feb 13 2023 14:08:48 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-02-13T08:08:48.879Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-13T08:08:48.887Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-02-13T08:08:49.163Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-13T08:08:49.163Z] > authorizing via signed-in user (shah.jalal.ju.bd@gmail.com)
+[debug] [2023-02-13T08:08:49.164Z] [iam] checking project car-selling-website-336db for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-02-13T08:08:49.166Z] > refreshing access token with scopes: []
+[debug] [2023-02-13T08:08:49.168Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-02-13T08:08:49.168Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-13T08:08:49.742Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-02-13T08:08:49.742Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-13T08:08:49.758Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-selling-website-336db:testIamPermissions [none]
+[debug] [2023-02-13T08:08:49.759Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-selling-website-336db:testIamPermissions x-goog-quota-user=projects/car-selling-website-336db
+[debug] [2023-02-13T08:08:49.760Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-selling-website-336db:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-02-13T08:08:50.096Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-02-13T08:08:50.096Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-02-13T08:09:10.974Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/car-selling-website-336db:testIamPermissions
+[debug] [2023-02-13T08:09:10.976Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/car-selling-website-336db [none]
+[debug] [2023-02-13T08:09:32.105Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/car-selling-website-336db
+[debug] [2023-02-13T08:09:32.514Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/car-selling-website-336db
+    at RetryOperation._fn (C:\Users\hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:242:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project car-selling-website-336db. Please make sure the project exists and your account has permission to access it.
