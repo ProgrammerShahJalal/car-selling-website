@@ -13,9 +13,9 @@ import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import {
-    Switch,
+    Routes,
     Route,
-    useRouteMatch
+    useMatch
 } from "react-router-dom";
 import AdminRoute from '../../Login/Login/AdminRoute/AdminRoute';
 import useAuth from '../../../hooks/useAuth';
@@ -48,7 +48,7 @@ function Dashboard(props) {
 
     const { admin, logout } = useAuth();
 
-    let { path, url } = useRouteMatch();
+    let { path, url } = useMatch();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -158,35 +158,20 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <Switch>
-                    <Route exact path={path}>
-                        <DashboardHome></DashboardHome>
-                    </Route>
-                    <AdminRoute path={`${path}/makeAdmin`}>
-                        <MakeAdmin></MakeAdmin>
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/addService`}>
-                        <AddService></AddService>
-                    </AdminRoute>
-                    <Route path={`${path}/addReview`}>
-                        <AddReview></AddReview>
-                    </Route>
-                    <Route path={`${path}/myOrders`}>
-                        <MyOrders></MyOrders>
-                    </Route>
-                    <AdminRoute path={`${path}/orders`}>
-                        <Orders></Orders>
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/services`}>
-                        <ManageServices></ManageServices>
-                    </AdminRoute>
-                    <Route path={`${path}/reviews`}>
-                        <ReviewSlider></ReviewSlider>
-                    </Route>
-                    <Route path={`${path}/pay`}>
-                        <Pay></Pay>
-                    </Route>
-                </Switch>
+                <Routes>
+                <Route path={path} element={<DashboardHome/>} />
+                <AdminRoute path={`${path}/makeAdmin`} element={<MakeAdmin/>} />
+                <AdminRoute path={`${path}/addService`} element={<AddService/>} />
+                    
+                <Route path={`${path}/addReview`} element={<AddReview/>} />
+                <Route path={`${path}/myOrders`} element={<MyOrders/>} />
+
+                <AdminRoute path={`${path}/orders`} element={<Orders/>} />
+                <AdminRoute path={`${path}/services`} element={<ManageServices/>} />
+
+                <Route path={`${path}/reviews`} element={<ReviewSlider/>} />
+                <Route path={`${path}/pay`} element={<Pay/>} />
+                </Routes>
             </Box>
         </Box>
     );

@@ -1,6 +1,6 @@
 import { CircularProgress } from '@mui/material';
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
@@ -13,7 +13,7 @@ const AdminRoute = ({ children, ...rest }) => {
                 user?.email && admin ? (
                     children
                 ) : (
-                    <Redirect
+                    <Navigate
                         to={{
                             pathname: "/",
                             state: { from: location }

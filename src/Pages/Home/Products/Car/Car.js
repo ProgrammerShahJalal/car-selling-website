@@ -1,17 +1,17 @@
 import { Grid, Paper, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import CarButton from '../../../../StyleComponent/CarButton';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Car = ({ car }) => {
     const { _id, name, img, price, description } = car;
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleOrder = id => {
         const uri = `cars/buying/${_id}`
-        history.push(uri);
+        navigate(uri);
     }
     return (
         <>

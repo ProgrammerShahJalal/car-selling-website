@@ -5,7 +5,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 // initialize firebase app
 initializeFirebase();
 
-const useFirebase = () => {
+export const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
@@ -15,8 +15,8 @@ const useFirebase = () => {
     const auth = getAuth();
 
 
-    const registerUser = (email, password, name, history) => {
-        setIsLoading(true);
+    const registerUser = (email, password, name, navigate) => {
+        setIsLoading(true); 
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const newUser = { email, displayName: name };
@@ -28,7 +28,7 @@ const useFirebase = () => {
                     displayName: name
                 }).then(() => { });
                 setError('');
-                history.replace('/');
+                navigate('/');
             })
             .catch((error) => {
                 setError(error.code.split('auth/',)[1])
@@ -38,11 +38,11 @@ const useFirebase = () => {
             })
     }
 
-    const loginUser = (email, password, location, history) => {
+    const loginUser = (email, password, location, navigate) => {
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const destination = location?.state?.from || '/';
-                history.replace(destination);
+                navigate(destination);
                 const user = result.user;
                 setUser(user);
                 setError('');
@@ -122,4 +122,4 @@ const useFirebase = () => {
     }
 }
 
-export default useFirebase;
+// export default useFirebase;
