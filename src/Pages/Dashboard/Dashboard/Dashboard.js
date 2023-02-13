@@ -230,11 +230,10 @@ function Dashboard(props) {
           </React.Fragment>
 
             <Route path="/dashboard" element={<AdminRoute />}>
-              <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
+            <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
               <Route path="/dashboard/addService" element={<AddService />} />
               <Route path="/dashboard/orders" element={<Orders />} />
-              <Route path="/dashboard/services" element={<ManageServices />}
-            />
+              <Route path="/dashboard/services" element={<ManageServices />} ></Route>
             </Route>
           </Routes>
         </React.Fragment>

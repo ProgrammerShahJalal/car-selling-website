@@ -1,11 +1,14 @@
 import { CircularProgress, LinearProgress } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import { Navigate , Route } from 'react-router';
+import { Navigate, useLocation } from "react-router-dom";
 import useAuth from '../../../hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
+
+    const location = useLocation();
+
     if (isLoading) {
         return <Box style={{ textAlign: 'center' }}>
             <LinearProgress style={{ margin: '10px' }} color="secondary" />
@@ -13,21 +16,13 @@ const PrivateRoute = ({ children, ...rest }) => {
         </Box>
 
     }
-    return (
-        <Route
-            {...rest}
-            render={({ location }) => user.email ? children : <Navigate
-                to={{
-                    pathname: "/login",
-                    state: { from: location }
-                }}
-            ></Navigate>
+    if (user?.email) {
+        return children;
+    }
 
-            }
-        >
-
-        </Route>
-    );
+    if(!user?.email){
+        return <Navigate to="/login" state={{ from: location }} />;
+    }
 };
 
 export default PrivateRoute;

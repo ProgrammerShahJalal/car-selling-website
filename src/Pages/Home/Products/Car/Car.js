@@ -10,7 +10,7 @@ const Car = ({ car }) => {
     const navigate = useNavigate();
 
     const handleOrder = id => {
-        const uri = `cars/buying/${_id}`
+        const uri = `buying/${_id}`
         navigate(uri);
     }
     return (

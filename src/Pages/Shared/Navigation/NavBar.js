@@ -41,7 +41,7 @@ function Navbar(props) {
             </ListItem>
             <ListItem button>
                 <ListItemText>
-                    <Link style={{ textDecoration: 'none' }} to='/products'>Explore Car</Link>
+                    <Link style={{ textDecoration: 'none' }} to='/cars'>Explore Car</Link>
                 </ListItemText>
             </ListItem>
             <ListItem button>
@@ -105,7 +105,7 @@ function Navbar(props) {
           >
             <Link style={{ textDecoration: 'none', color: 'white' }} to='/'>Enzo Car</Link>
           </Typography>
-          <NavLink  to="/products" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Explore Car</Button></NavLink>
+          <NavLink  to="/cars" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Explore Car</Button></NavLink>
                         <NavLink  to="/testimonials" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Reviews</Button></NavLink>
                         {
                             user?.email ?

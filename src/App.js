@@ -11,7 +11,6 @@ import Testimonials from "./Pages/Testimonials/Testimonials";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Navbar from "./Pages/Shared/Navigation/NavBar";
-import MyOrders from "./Pages/Dashboard/MyOrders/MyOrders";
 
 function App() {
   return (
@@ -23,14 +22,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/products" element={<CarExplore />} />
             <Route path="/testimonials" element={<Testimonials />} />
-            <Route path='/cars/buying/:buyingId' element={<PrivateRoute><CarDetails /></PrivateRoute>} />
 
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/cars" element={<CarExplore />} />
+            <Route path="/cars/buying/:buyingId" element={<CarDetails />} />
         
-           
+
           <React.Fragment path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
               <Route path="" element={<Dashboard />}></Route>
               <Route  path="dashboard/*" element={<Dashboard />}></Route>
