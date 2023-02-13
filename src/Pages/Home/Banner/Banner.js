@@ -27,7 +27,7 @@ const Banner = () => {
                             <Typography sx={{ fontWeight: 'light', mb: 2, fontSize: 15, textAlign: 'justify', width: '75%' }} variant="h6" component="div">
                                 A car is a wheeled motor vehicle used for transportation. Most definitions of cars say that they run primarily on roads, seat one-to-eight people, have four wheels and mainly transport people rather than goods.
                             </Typography>
-                            <Link to='/products' style={{ textDecoration: 'none' }}><MuiButton>Explore Car</MuiButton></Link>
+                            <Link to='/cars' style={{ textDecoration: 'none' }}><MuiButton>Explore Car</MuiButton></Link>
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6} >
