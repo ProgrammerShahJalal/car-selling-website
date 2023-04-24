@@ -18,7 +18,7 @@ const MyOrders = () => {
     console.log(user.email)
     useEffect(() => {
         let isUnMount = false;
-        const url = `https://car-selling-server.onrender.com/myOrders?email=${user.email}`;
+        const url = `https://car-selling-server.up.railway.app/myOrders?email=${user.email}`;
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
@@ -39,7 +39,7 @@ const MyOrders = () => {
     const handleDelete = id => {
         const result = window.confirm('Are you sure to delete?');
         if (result) {
-            const url = `https://car-selling-server.onrender.com/allOrders/${id}`
+            const url = `https://car-selling-server.up.railway.app/allOrders/${id}`
             console.log(url);
             fetch(url, {
                 method: 'DELETE'

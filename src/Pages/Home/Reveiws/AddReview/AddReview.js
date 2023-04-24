@@ -8,7 +8,7 @@ const AddReview = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://car-selling-server.onrender.com/reviews', data)
+        axios.post('https://car-selling-server.up.railway.app/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added a New Review Successfully!');

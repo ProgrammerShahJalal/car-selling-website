@@ -10,7 +10,7 @@ const AddService = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://car-selling-server.onrender.com/cars', data)
+        axios.post('https://car-selling-server.up.railway.app/cars', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added a New Service Successfully!');

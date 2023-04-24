@@ -9,7 +9,7 @@ const Reviews = (props) => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('https://car-selling-server.onrender.com/reviews')
+        fetch('https://car-selling-server.up.railway.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
