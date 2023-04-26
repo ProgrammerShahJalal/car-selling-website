@@ -119,7 +119,7 @@ function Navbar(props) {
                                 </Box>
                                 :
                                 <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">
-                                    <Button color="inherit">Login</Button>
+                                    <Button color="inherit" sx={{ display: {xs: 'none', sm: 'block'}}}>Login</Button>
                                 </NavLink>
                         }
           
