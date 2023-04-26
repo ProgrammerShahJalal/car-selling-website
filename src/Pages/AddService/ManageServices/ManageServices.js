@@ -56,7 +56,7 @@ const ManageServices = () => {
                                 <TableCell align="right"><img style={{ width: '100px' }} src={row.img} alt="" /></TableCell>
                                 <TableCell align="right">
                                     <Tooltip title="Delete">
-                                        <Button color="secondary" onClick={() => handleDelete(pd._id)} variant="contained">
+                                        <Button color="secondary" onClick={() => handleDelete(row._id)} variant="contained">
                                             Delete <DeleteIcon />
                                         </Button>
                                     </Tooltip>
