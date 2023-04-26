@@ -80,7 +80,7 @@ const CarList = () => {
                         <Typography sx={{ fontWeight: 'light', mb: 2, fontSize: 15, textAlign: 'justify', width: '75%' }} variant="h6" component="div">
                             Suitable for any car dealer websites, business or corporate websites. The Theme has been Created especially for Automotive Dealers, car resellers, car service stations, mechanic workshop and auto motor retailers.
                         </Typography>
-                        <Link to='/products' style={{ textDecoration: 'none' }}><MuiButton>Explore Car</MuiButton></Link>
+                        <Link to='/cars' style={{ textDecoration: 'none' }}><MuiButton>Explore Car</MuiButton></Link>
                     </Stack>
                 </Grid>
                 <Grid item xs={12} md={6}>
