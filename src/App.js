@@ -11,13 +11,14 @@ import Testimonials from "./Pages/Testimonials/Testimonials";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Navbar from "./Pages/Shared/Navigation/NavBar";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   return (
     <div>
       <AuthProvider>
         <Router>
-          {/* <Navigation/> */}
+        <ScrollToTop />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
