@@ -101,15 +101,16 @@ function Navbar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' } }}
           >
             <Link style={{ textDecoration: 'none', color: 'white' }} to='/'>Enzo Car</Link>
           </Typography>
-          <NavLink  to="/cars" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Explore Car</Button></NavLink>
-                        <NavLink  to="/testimonials" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Reviews</Button></NavLink>
+         
+          <NavLink  to="/cars" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit" sx={{ display: {xs: 'none', sm: 'block'}}}>Explore Car</Button></NavLink>
+                        <NavLink  to="/testimonials" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit"sx={{ display: {xs: 'none', sm: 'block'}}}>Reviews</Button></NavLink>
                         {
                             user?.email ?
-                                <Box>
+                                <Box sx={{ display: {xs: 'none', sm: 'block'}}}>
                                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard">
                                         <Button color="inherit">Dashboard</Button>
                                     </NavLink>
@@ -121,6 +122,7 @@ function Navbar(props) {
                                     <Button color="inherit">Login</Button>
                                 </NavLink>
                         }
+          
         </Toolbar>
       </AppBar>
 
