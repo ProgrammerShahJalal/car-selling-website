@@ -11,6 +11,7 @@ import Testimonials from "./Pages/Testimonials/Testimonials";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Navbar from "./Pages/Shared/Navigation/NavBar";
+import MakeAdmin from "./Pages/Dashboard/MakeAdmin/MakeAdmin";
 
 function App() {
   return (

@@ -229,12 +229,15 @@ function Dashboard(props) {
             <Route path="pay" element={<Pay />} />
           </React.Fragment>
 
-            <Route path="/dashboard" element={<AdminRoute />}>
-            <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
-              <Route path="/dashboard/addService" element={<AddService />} />
-              <Route path="/dashboard/orders" element={<Orders />} />
-              <Route path="/dashboard/services" element={<ManageServices />} ></Route>
-            </Route>
+          <React.Fragment path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>}>
+              <Route path="" element={<DashboardHome />}></Route>
+              <Route path="dashboard" element={<DashboardHome />}></Route>
+              <Route path="makeAdmin" element={<MakeAdmin />} />
+              <Route path="addService" element={<AddService />} />
+              <Route path="orders" element={<Orders />} />
+              <Route path="services" element={<ManageServices />} ></Route>
+          </React.Fragment>
+
           </Routes>
         </React.Fragment>
       </Box>
