@@ -159,7 +159,7 @@ function Dashboard(props) {
           </Typography>
           <Typography variant="h6" noWrap component="div">
             <Link
-              to="/home"
+              to="/"
               style={{
                 textDecoration: "none",
                 color: "white",
