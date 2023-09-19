@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://car-selling-server.up.railway.app/users/admin', {
+        fetch('https://car-selling-server.onrender.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

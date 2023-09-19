@@ -4,14 +4,14 @@ import Car from './Car/Car';
 
 
 const Products = () => {
-    const url = 'https://car-selling-server.up.railway.app/cars';
+    const url = 'https://car-selling-server.onrender.com/cars';
 
     const [cars, setCars] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://car-selling-server.up.railway.app/cars')
+        fetch('https://car-selling-server.onrender.com/cars')
             .then(res => res.json())
             .then(data => {
                 setIsLoading(false);

@@ -73,7 +73,7 @@ export const useFirebase = () => {
     useEffect(() => {
         let isUnMount = false;
         setIsLoading(true);
-        fetch(`https://car-selling-server.up.railway.app/users/${user.email}`)
+        fetch(`https://car-selling-server.onrender.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 if (!isUnMount) {
@@ -101,7 +101,7 @@ export const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://car-selling-server.up.railway.app/users', {
+        fetch('https://car-selling-server.onrender.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
